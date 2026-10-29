@@ -1,0 +1,21 @@
+{
+  "domain": "instnt_hub",
+  "name": "instnt hub",
+  "after_dependencies": [
+    "playstation_network"
+  ],
+  "codeowners": [
+    "@rbenjamint"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "http",
+    "websocket_api"
+  ],
+  "documentation": "https://github.com/instnthub/instnthub-HA",
+  "integration_type": "service",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/instnthub/instnthub-HA/issues",
+  "requirements": [],
+  "version": "0.4.0"
+}

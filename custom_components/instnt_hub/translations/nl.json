@@ -1,0 +1,62 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "instnt hub",
+        "description": "Koppelt Home Assistant aan de app instnt hub. Wat er al te vinden is (PlayStation Network, ps5-mqtt) wordt meteen ingevuld; de rest kies je daarna bij Configureren."
+      }
+    },
+    "abort": {
+      "already_configured": "instnt hub is al toegevoegd."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Koppelingen en automatiseringen",
+        "description": "Kies welke apparaten bij de companion horen. De automatiseringen staan standaard uit: heb je al eigen automatiseringen voor hetzelfde, zet die dan eerst uit, anders lopen ze dubbel.",
+        "data": {
+          "console_power": "Console aan/uit",
+          "console_playing": "Speltitel (PlayStation Network)",
+          "console_art": "Hoes",
+          "covers": "Rolgordijnen",
+          "day_position": "Rolgordijnen overdag (0 = dicht)",
+          "night_position": "Rolgordijnen na zonsondergang",
+          "soundbar_toggle": "Soundbar aan/uit (wisselknop)",
+          "tv": "Tv",
+          "keep_on": "Tv blijft aan als deze spelen",
+          "auto_covers": "Rolgordijnen bewegen bij gamen",
+          "auto_soundbar": "Soundbar volgt de console",
+          "auto_tv": "Tv uit als de console uitgaat",
+          "guide": "Tv-gids",
+          "guide_url": "Bron van de tv-gids (XMLTV)",
+          "guide_channels": "Zenders in de gids"
+        },
+        "data_description": {
+          "console_power": "De schakelaar van ps5-mqtt (direct), of de mediaspeler van PlayStation Network (via de cloud, ongeveer 30 seconden later).",
+          "soundbar_toggle": "Een script of knop die de soundbar aan/uit wisselt, bijvoorbeeld via een Harmony Hub.",
+          "keep_on": "Kies de Apple TV zelf, niet een HomePod in dezelfde kamer.",
+          "guide": "Haalt elke zes uur een XMLTV-gids op voor de app. Standaard het gratis bestand voor Nederland van open-epg.com.",
+          "guide_channels": "Leeg = de grote Nederlandse zenders. De lijst verschijnt nadat de gids één keer is opgehaald."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "console": {
+        "name": "Console",
+        "state": {
+          "on": "Aan",
+          "off": "Uit",
+          "unknown": "Onbekend"
+        }
+      }
+    },
+    "switch": {
+      "soundbar": {
+        "name": "Soundbar"
+      }
+    }
+  }
+}

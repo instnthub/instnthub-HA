@@ -1,0 +1,62 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "instnt hub",
+        "description": "Connects Home Assistant to the instnt hub app. Anything that can be found (PlayStation Network, ps5-mqtt) is filled in right away; choose the rest under Configure."
+      }
+    },
+    "abort": {
+      "already_configured": "instnt hub is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Connections and automations",
+        "description": "Choose which devices belong to the companion. The automations are off by default: if you already have your own automations for the same thing, turn those off first, or they will run twice.",
+        "data": {
+          "console_power": "Console on/off",
+          "console_playing": "Game title (PlayStation Network)",
+          "console_art": "Cover art",
+          "covers": "Blinds",
+          "day_position": "Blinds during the day (0 = closed)",
+          "night_position": "Blinds after sunset",
+          "soundbar_toggle": "Soundbar on/off (toggle)",
+          "tv": "TV",
+          "keep_on": "Keep the TV on while these play",
+          "auto_covers": "Move blinds while gaming",
+          "auto_soundbar": "Soundbar follows the console",
+          "auto_tv": "TV off when the console turns off",
+          "guide": "TV guide",
+          "guide_url": "TV guide source (XMLTV)",
+          "guide_channels": "Channels in the guide"
+        },
+        "data_description": {
+          "console_power": "The ps5-mqtt switch (instant), or the PlayStation Network media player (cloud, about 30 seconds later).",
+          "soundbar_toggle": "A script or button that toggles the soundbar, for example through a Harmony Hub.",
+          "keep_on": "Pick the Apple TV itself, not a HomePod in the same room.",
+          "guide": "Fetches an XMLTV guide every six hours for the app. By default the free Dutch file from open-epg.com.",
+          "guide_channels": "Empty = the main Dutch channels. The list appears once the guide has been fetched."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "console": {
+        "name": "Console",
+        "state": {
+          "on": "On",
+          "off": "Off",
+          "unknown": "Unknown"
+        }
+      }
+    },
+    "switch": {
+      "soundbar": {
+        "name": "Soundbar"
+      }
+    }
+  }
+}
